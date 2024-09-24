@@ -34,3 +34,14 @@ flush privileges ;
    - 안된다면
    1. application.yaml에서 username과 password가 맞는지 확인
    2. com.mysql.cj.jdbc.Driver 에러 -> dependency 오타 확인
+
+8. article, articleComment 완성
+9. article, articleComment의 repository (interface)작성
+10. test에서 repository test해보기
+   - [대량의 데이터 생성해주는(mock data) 웹페이지](https://mockaroo.com/)에서 테스트데이터 다운받기
+   - database에 CRUD 잘 되는지 확인
+
+* jdk 버전의 차이때문인지 `@jakarta.persistence.Id`를 넣어야 `@Id` 역할을 함
+* application.yaml에서  `test.database.replace: none`는 testdb만 다른 걸 쓰고 싶을 때 넣음
+  * ...test.java에서 @AutoConfigureTestDatabase 애노테이션을 넣는 것과 같은 효과
+  
